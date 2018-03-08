@@ -23,8 +23,8 @@ class Home extends Component {
                     </section>
 
 
-                    <div className={`jumbotron${styles.myJumbotron}`}>
-                        <div className="mt-5 container">
+                    <div className={`jumbotron${styles.myJumbotron} mt-5 mb-5`}>
+                        <div className="container">
                             <Switch>
                                 <Route exact path="/" component={Summary} />
                                 <Route
@@ -32,14 +32,12 @@ class Home extends Component {
                                     render={(routeProps) => {
                                         return <Education {...routeProps} myData={EducationData} />;
                                     }}
-
                                 />
                                 <Route
                                     exact path="/experience"
                                     render={(routeProps) => {
                                         return <Experience {...routeProps} />;
                                     }}
-
                                 />
 
                                 <Route

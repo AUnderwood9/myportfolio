@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
-import timeLine from "./Education.scss";
+import timeLine from "./../../globalStyles/TimeLine.scss";
+import Listing from "../TimeLine/TimeLine";
 
 function Education(props) {
     props.myData.forEach((item) => { console.log(item) });
@@ -27,63 +28,24 @@ function Education(props) {
             })} */}
 
             <div className={`${timeLine.timeline}`}>
-                <div className={`${timeLine.entry}`}>
-                    <div className={`${timeLine.title}`}>
-                        <h3>2014 - Present</h3>
-                        <p>Title, Company</p>
-                    </div>
-                    <div className={`${timeLine.body}`}>
-                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-                        <ul>
-                            <li>Rerum sit libero possimus amet excepturi</li>
-                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={`${timeLine.entry}`}>
-                    <div className={`${timeLine.title}`}>
-                        <h3>2010 - Present</h3>
-                        <p>Title, Company</p>
-                    </div>
-                    <div className={`${timeLine.body}`}>
-                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-                        <ul>
-                            <li>Rerum sit libero possimus amet excepturi</li>
-                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={`${timeLine.entry}`}>
-                    <div className={`${timeLine.title}`}>
-                        <h3>2009 - 2010</h3>
-                        <p>Title, Company</p>
-                    </div>
-                    <div className={`${timeLine.body}`}>
-                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-                        <ul>
-                            <li>Rerum sit libero possimus amet excepturi</li>
-                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={`${timeLine.entry}`}>
-                    <div className={`${timeLine.title}`}>
-                        <h3>2006 - 2008</h3>
-                        <p>Title, Company</p>
-                    </div>
-                    <div className={`${timeLine.body}`}>
-                        <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-                        <ul>
-                            <li>Rerum sit libero possimus amet excepturi</li>
-                            <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-                            <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-                        </ul>
-                    </div>
-                </div>
-
+                {props.myData.map((item, index) => {
+                    if (item.hasOwnProperty("programName")) {
+                        let dataObj = {
+                            date: item.date,
+                            title: item.programName,
+                            company: item.institution,
+                            listing: item.eduCert
+                        };
+                        return <Listing displayData={dataObj}  type="education"/>;
+                    } else {
+                        let dataObj = {
+                            date: item.date,
+                            company: item.institution,
+                            listing: item.eduCert
+                        };
+                        return <Listing key={`listing-parent-education-${index}`} displayData={dataObj} type="education"/>;
+                    }
+                })}
             </div>
         </Fragment>
     );

@@ -1,4 +1,4 @@
-@import "/../../variables";
+@import "/../variables";
 
 $container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);
 
@@ -9,7 +9,7 @@ $dot-diameter: 1em;
 
 .timeline {
   width:100%;
-  max-width:800px;
+  max-width:80vw;
   background:$contentThemeColor;
   padding: 100px 50px;
   position: relative;
