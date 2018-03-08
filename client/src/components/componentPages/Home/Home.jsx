@@ -6,6 +6,8 @@ import Summary from "../../componentViews/Summary/Summary";
 import Education from "../../componentViews/Education/Education";
 import EducationData from "../../dataComponents/EducationData";
 import Experience from "../../componentViews/Experience/Experience";
+import ContactInfo from "../../componentViews/ContactFooter/ContactFooter";
+import Projects from "../../componentViews/Projects/Projects";
 
 class Home extends Component {
     constructor(props) {
@@ -21,24 +23,38 @@ class Home extends Component {
                     </section>
 
 
-                    <div className={`jumbotron ${styles.myJumbotron}`}>
-                        <Switch>
-                            <Route exact path="/" component={Summary} />
-                            <Route 
-                                exact path="/education" 
-                                render={(routeProps) => {
-                                    return <Education {...routeProps} myData={EducationData}/>;
-                                }}
+                    <div className={`jumbotron${styles.myJumbotron}`}>
+                        <div className="mt-5 container">
+                            <Switch>
+                                <Route exact path="/" component={Summary} />
+                                <Route
+                                    exact path="/education"
+                                    render={(routeProps) => {
+                                        return <Education {...routeProps} myData={EducationData} />;
+                                    }}
 
-                            />
-                            <Route 
-                                exact path="/experience" 
-                                render={(routeProps) => {
-                                    return <Experience {...routeProps}/>;
-                                }}
+                                />
+                                <Route
+                                    exact path="/experience"
+                                    render={(routeProps) => {
+                                        return <Experience {...routeProps} />;
+                                    }}
 
-                            />
-                        </Switch>
+                                />
+
+                                <Route
+                                    exact path="/projects"
+                                    render={(routeProps) => {
+                                        return <Projects {...routeProps} />
+                                    }}
+                                />
+                            </Switch>
+                        </div>
+                    </div>
+                    <div className={`jumbotron ${styles.footerTheme}`}>
+                        <div className="container">
+                            <ContactInfo/>
+                        </div>
                     </div>
                 </Fragment>
             </Router>

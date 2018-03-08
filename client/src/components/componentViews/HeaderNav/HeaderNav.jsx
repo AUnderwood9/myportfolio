@@ -19,6 +19,9 @@ function HeaderNav(props) {
                     <li className="nav-item">
                         <Link to="/experience" className="nav-link">Work Experience</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/projects" className="nav-link">Projects</Link>
+                    </li>
                 </ul>
                 <span className="navbar-text">
                     Navbar text with an inline element
