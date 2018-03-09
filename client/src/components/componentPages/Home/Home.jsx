@@ -10,6 +10,7 @@ import ContactInfo from "../../componentViews/ContactFooter/ContactFooter";
 import Projects from "../../componentViews/Projects/Projects";
 import WorkData from "../../dataComponents/WorkData";
 import ProjectData from "../../dataComponents/ProjectData";
+import ProjectDemo from "../../componentViews/ProjectDemo/ProjectDemo";
 
 class Home extends Component {
     constructor(props) {
@@ -48,6 +49,8 @@ class Home extends Component {
                                         return <Projects {...routeProps} myData={ProjectData}/>
                                     }}
                                 />
+
+                                <Route exact path="/project/:project" component={ProjectDemo}/>
                             </Switch>
                         </div>
                     </div>

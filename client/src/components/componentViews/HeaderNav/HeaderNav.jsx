@@ -22,6 +22,9 @@ function HeaderNav(props) {
                     <li className="nav-item">
                         <Link to="/projects" className="nav-link">Projects</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/test" className="nav-link">Test</Link>
+                    </li>
                 </ul>
                 {/* <span className="navbar-text">
                     Navbar text with an inline element

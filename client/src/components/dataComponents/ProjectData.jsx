@@ -11,7 +11,7 @@ function importAll (r) {
 
 const images = importAll(require.context('./../../../resources/img/headLines/', false, /\.(png|jpe?g|svg)$/));
 
-console.log(images);
+// console.log(images);
 
 const projectArr = [
     {
@@ -24,7 +24,13 @@ const projectArr = [
         languages: [
             "C#"
         ],
-        headerImg: images[0]
+        headerImg: images[0],
+        screenShots: images,
+        description: [
+            "Stuff 1",
+            "Stuff 2",
+            "Stuff 3"
+        ]
     },{
         projectTitle: "JavaScript Memory Game",
         startDate: "2018",
@@ -37,7 +43,13 @@ const projectArr = [
             "HTML 5",
             "CSS 3"
         ],
-        headerImg: images[1]
+        headerImg: images[1],
+        screenShots: images,
+        description: [
+            "Stuff 1",
+            "Stuff 2",
+            "Stuff 3"
+        ]
     },{
         projectTitle: "Database Management Final",
         startDate: "2014",
@@ -52,7 +64,13 @@ const projectArr = [
             "SQL",
             "CentOs"
         ],
-        headerImg: images[2]
+        headerImg: images[2],
+        screenShots: images,
+        description: [
+            "Stuff 1",
+            "Stuff 2",
+            "Stuff 3"
+        ]
     }
 ];
 

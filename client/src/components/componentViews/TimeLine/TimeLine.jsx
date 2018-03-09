@@ -1,9 +1,13 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import timeLine from "./../../globalStyles/TimeLine.scss"
 
 function TimeLine(props) {
-    console.log("props", props);
+    // console.log("props", props);
     let listing = props.displayData.listing;
+    let projectInfo = props.projectInfo;
+    projectInfo.componentName = props.type;
+    // console.log(projectInfo);
     let headingCaption = props.displayData.title ? <Fragment> <h4>{props.displayData.title}</h4> <h5>{props.displayData.company}</h5> </Fragment> 
     : <h4>{props.displayData.company}</h4>;
     let listingElement = Array.isArray(listing) ?  ( <ul>
@@ -20,7 +24,7 @@ function TimeLine(props) {
     }else{
         skillListingElement = null;
     }
-    let placeHolder = props.header ? <img src={props.header}/> : null;
+    let placeHolder = props.header ?  <Link to={{pathname: `/project/${props.displayData.title.replace(" ", "")}`, state: projectInfo}}> <img src={props.header}/> </Link>: null;
 
 
     return (
@@ -31,12 +35,6 @@ function TimeLine(props) {
                     {headingCaption}
                 </div>
                 <div className={`${timeLine.body}`}>
-                    {/* <p>Voluptatibus veniam ea reprehenderit atque reiciendis non laborum adipisci ipsa pariatur omnis.</p>
-                    <ul>
-                        <li>Rerum sit libero possimus amet excepturi</li>
-                        <li>Exercitationem enim dolores sunt praesentium dolorum praesentium</li>
-                        <li>Modi aut dolores dignissimos sequi sit ut aliquid molestias deserunt illo</li>
-                    </ul> */}
                     {placeHolder}
                     {skillListingElement}
                     {listingElement}
