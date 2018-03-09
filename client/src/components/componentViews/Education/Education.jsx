@@ -36,7 +36,7 @@ function Education(props) {
                             company: item.institution,
                             listing: item.eduCert
                         };
-                        return <Listing displayData={dataObj}  type="education"/>;
+                        return <Listing key={`listing-parent-education-${index}`} displayData={dataObj}  type="education"/>;
                     } else {
                         let dataObj = {
                             date: item.date,

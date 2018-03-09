@@ -8,6 +8,8 @@ import EducationData from "../../dataComponents/EducationData";
 import Experience from "../../componentViews/Experience/Experience";
 import ContactInfo from "../../componentViews/ContactFooter/ContactFooter";
 import Projects from "../../componentViews/Projects/Projects";
+import WorkData from "../../dataComponents/WorkData";
+import ProjectData from "../../dataComponents/ProjectData";
 
 class Home extends Component {
     constructor(props) {
@@ -36,14 +38,14 @@ class Home extends Component {
                                 <Route
                                     exact path="/experience"
                                     render={(routeProps) => {
-                                        return <Experience {...routeProps} />;
+                                        return <Experience {...routeProps} myData={WorkData} />;
                                     }}
                                 />
 
                                 <Route
                                     exact path="/projects"
                                     render={(routeProps) => {
-                                        return <Projects {...routeProps} />
+                                        return <Projects {...routeProps} myData={ProjectData}/>
                                     }}
                                 />
                             </Switch>
