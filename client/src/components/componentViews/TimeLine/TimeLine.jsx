@@ -24,18 +24,20 @@ function TimeLine(props) {
     }else{
         skillListingElement = null;
     }
-    let placeHolder = props.header ?  <Link to={{pathname: `/project/${props.displayData.title.replace(" ", "")}`, state: projectInfo}}> <img src={props.header}/> </Link>: null;
+    let placeHolder = props.header ?  <Link to={{pathname: `/project/${props.displayData.title.replace(" ", "")}`, state: projectInfo}} className={`${timeLine.circles}`}> <img src={props.header}/> </Link>: null;
 
 
     return (
         <Fragment>
             <div className={`${timeLine.entry}`}>
-                <div className={`${timeLine.title}`}>
+                {placeHolder}
+            {/* <div className={`${timeLine.circles}`}>
+                {placeHolder}
+            </div> */}
+                <div className={`${timeLine.body}`}>
                     <h3>{props.displayData.date}</h3>
                     {headingCaption}
-                </div>
-                <div className={`${timeLine.body}`}>
-                    {placeHolder}
+                    {/* {placeHolder} */}
                     {skillListingElement}
                     {listingElement}
                 </div>

@@ -4,7 +4,8 @@ $container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);
 
 $gutter: 30px;
 $border-width: .25em;
-$dot-diameter: 1em;
+$dot-diameter: 6em;
+$cirle-width: 33%;
 
 
 .timeline {
@@ -34,13 +35,22 @@ $dot-diameter: 1em;
   clear: both;
   text-align: left;
   position: relative;
-  .title {
+  .circles{
     margin-bottom: .5em;
     float: left;
-    width: 33%;
+    width: $cirle-width;
     padding-right: $gutter;
-    text-align: right;
     position: relative;
+    img{
+      // display: block;
+      position: absolute;
+      width: $dot-diameter;
+      height: $dot-diameter;
+      border: $border-width solid $ternaryThemeColor;
+      border-radius:100%;
+      top: 15%;
+      right: -$dot-diameter/2;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -51,17 +61,42 @@ $dot-diameter: 1em;
       border-radius:100%;
       top: 15%;
       right: -$dot-diameter/2;
+      // img{
+      //   position: absolute;
+      //   width: $dot-diameter;
+      //   height: $dot-diameter;
+      // }
     //   z-index: 99;
     }
-    h3 {
-      margin: 0;
-      font-size: 120%;
-    }
-    p {
-      margin: 0;
-      font-size: 100%;
-    }
   }
+  // .title {
+  //   margin-bottom: .5em;
+  //   float: left;
+  //   width: 33%;
+  //   padding-right: $gutter;
+  //   // text-align: right;
+  //   position: relative;
+  //   // &:before {
+  //   //   content: '';
+  //   //   position: absolute;
+  //   //   width: $dot-diameter;
+  //   //   height: $dot-diameter;
+  //   //   border: $border-width solid $ternaryThemeColor;
+  //   //   background-color:$contentThemeColor;
+  //   //   border-radius:100%;
+  //   //   top: 15%;
+  //   //   right: -$dot-diameter/2;
+  //   // //   z-index: 99;
+  //   // }
+  //   h3 {
+  //     margin: 0;
+  //     font-size: 120%;
+  //   }
+  //   p {
+  //     margin: 0;
+  //     font-size: 100%;
+  //   }
+  // }
   .body {
     margin: 0 0 3em;
     float: right;
