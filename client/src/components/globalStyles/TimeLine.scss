@@ -51,23 +51,6 @@ $cirle-width: 33%;
       top: 15%;
       right: -$dot-diameter/2;
     }
-    &:before {
-      content: '';
-      position: absolute;
-      width: $dot-diameter;
-      height: $dot-diameter;
-      border: $border-width solid $ternaryThemeColor;
-      background-color:$contentThemeColor;
-      border-radius:100%;
-      top: 15%;
-      right: -$dot-diameter/2;
-      // img{
-      //   position: absolute;
-      //   width: $dot-diameter;
-      //   height: $dot-diameter;
-      // }
-    //   z-index: 99;
-    }
   }
   // .title {
   //   margin-bottom: .5em;
