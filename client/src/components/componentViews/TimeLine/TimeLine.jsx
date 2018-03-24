@@ -26,15 +26,19 @@ function TimeLine(props) {
     }
     let placeHolder = props.header ?  <Link to={{pathname: `/project/${props.displayData.title.replace(" ", "")}`, state: projectInfo}} className={`${timeLine.circles}`}> <img src={props.header}/> </Link>: null;
 
+    let entryBodyClass = (props.entryNum % 2 === 0)  ? timeLine.bodyLeft : timeLine.body;
 
     return (
         <Fragment>
             <div className={`${timeLine.entry}`}>
+            {/* <div className={`${timeLine.bodyLeft}`}>
+                <p>Stuff</p>
+            </div> */}
                 {placeHolder}
             {/* <div className={`${timeLine.circles}`}>
                 {placeHolder}
             </div> */}
-                <div className={`${timeLine.body}`}>
+                <div className={`${entryBodyClass}`}>
                     <h3>{props.displayData.date}</h3>
                     {headingCaption}
                     {/* {placeHolder} */}

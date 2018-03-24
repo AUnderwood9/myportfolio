@@ -23,7 +23,7 @@ function Projects (props){
                     let headerImg = item.headerImg;
                     return (
                         <Fragment>
-                            <Listing key={`listing-parent-projects-${index}`} displayData={dataObj}  type="projects" header={headerImg} projectInfo={projectInfo}/>
+                            <Listing key={`listing-parent-projects-${index}`} displayData={dataObj}  type="projects" header={headerImg} projectInfo={projectInfo} entryNum={index}/>
                             {/* <Link to="/test" params={{test: "stuff"}}>More Info</Link> */}
                             {/* <Link to={{pathname: "/test", state: {test:"stuff"}}}>More Info</Link> */}
                         </Fragment>

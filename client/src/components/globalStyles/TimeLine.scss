@@ -4,8 +4,9 @@ $container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);
 
 $gutter: 30px;
 $border-width: .25em;
-$dot-diameter: 6em;
+$dot-diameter: 7em;
 $cirle-width: 33%;
+$body-width: 50%;
 
 
 .timeline {
@@ -33,13 +34,13 @@ $cirle-width: 33%;
 
 .entry {
   clear: both;
-  text-align: left;
+  // text-align: left;
   position: relative;
   .circles{
-    margin-bottom: .5em;
-    float: left;
+    // margin-bottom: .5em;
+    // float: left;
     width: $cirle-width;
-    padding-right: $gutter;
+    // padding-right: $gutter;
     position: relative;
     img{
       // display: block;
@@ -48,8 +49,9 @@ $cirle-width: 33%;
       height: $dot-diameter;
       border: $border-width solid $ternaryThemeColor;
       border-radius:100%;
-      top: 15%;
-      right: -$dot-diameter/2;
+      // top: 15%;
+      // right: 0em;
+      right: $gutter*3.8;
     }
   }
   // .title {
@@ -80,11 +82,38 @@ $cirle-width: 33%;
   //     font-size: 100%;
   //   }
   // }
+
+  .bodyLeft {
+    // margin: 0 0 4em;
+    float: left;
+    width: $body-width;
+
+    // padding-right: $gutter*2;
+    // p {
+    //   line-height: 1.4em;
+    //   &:first-child {
+    //     margin-top: 0;
+    //     font-weight: 400;
+    //   }
+    // }
+    // ul {
+    //   color:#aaa;
+    //   padding-right: 0;
+    //   list-style-type: none;
+    //   li:before {
+    //     content: "–";
+    //     margin-left: .5em;
+    //   }
+    // }
+  }
+
   .body {
-    margin: 0 0 3em;
+    position: relative;
+    margin: 0 0 4em;
     float: right;
-    width: 66%;
-    padding-left: $gutter;
+    width: $body-width;
+    // padding-left: $gutter*2;
+    top: 4em;
     p {
       line-height: 1.4em;
       &:first-child {
@@ -98,7 +127,7 @@ $cirle-width: 33%;
       list-style-type: none;
       li:before {
         content: "–";
-        margin-right: .5em;
+        margin-right: .55em;
       }
     }
   }
